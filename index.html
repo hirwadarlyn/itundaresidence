@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
     <title>ITUNDA-RESIDENCE KIGALI</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function() {
-            emailjs.init({
-                publicKey: "Bkezhf8KlDyKE4_ki",
-            });
-        })();
-    </script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "Bkezhf8KlDyKE4_ki",
+      });
+   })();
+</script>
     <style>
         :root {
             --primary-dark: #1a1a1a;
@@ -254,7 +254,7 @@
             background-position: center;
             z-index: -1;
             transform: scale(1.05);
-            animation: zoomEffect 5s ease-in-out;
+            animation: zoomEffect 1s infinite alternate ease-in-out;
         }
         @keyframes zoomEffect {
             0% { transform: scale(1.05); }
@@ -1419,6 +1419,7 @@
                             </div>
                         </div>
                         <div class="room-price">$30/night</div>
+                    
                     </div>
                 </div>
                 <div class="room-card fade-in">
@@ -1444,6 +1445,7 @@
                             </div>
                         </div>
                         <div class="room-price">$40/night</div>
+                    
                     </div>
                 </div>
                 <div class="room-card fade-in">
@@ -1469,6 +1471,7 @@
                             </div>
                         </div>
                         <div class="room-price">$50/night</div>
+                    
                     </div>
                 </div>
                 <!-- ADDED: One Bed Apartment -->
@@ -1495,6 +1498,7 @@
                             </div>
                         </div>
                         <div class="room-price">$80/night</div>
+                   
                     </div>
                 </div>
                 <!-- ADDED: Two Bed Apartment -->
@@ -1521,6 +1525,7 @@
                             </div>
                         </div>
                         <div class="room-price">$100/night</div>
+                    
                     </div>
                 </div>
                 <!-- ADDED: Three Bed Apartment -->
@@ -1547,6 +1552,7 @@
                             </div>
                         </div>
                         <div class="room-price">$150/night</div>
+        
                     </div>
                 </div>
             </div>
@@ -1651,10 +1657,11 @@
                 <div class="gallery-item fade-in">
                     <img src="bedroom2.jpeg" alt="Dining Room">
                     <div class="gallery-overlay">
-                        <h4>Bedrooms</h4>
-                        <p>Resting space, Relaxation & Comfort zone</p>
+                        <h4> Bedrooms</h4>
+                        <p>Resting space,Relaxation& Comfort zone</p>
                     </div>
                 </div>
+              
             </div>
         </div>
     </section>
@@ -1891,7 +1898,7 @@
             </div>
             <div class="contact-container" id="book-accomodation">
                 <div class="contact-form fade-in">
-                    <h3>BOOK ACCOMMODATION & ROOMS</h3>
+                    <h3>BOOK ACCOMODATION & ROOMS</h3>
                     <form id="contactForm">
                         <div class="form-group">
                             <input type="text" placeholder=" " required>
@@ -2026,7 +2033,6 @@
                             <option value="" disabled selected>Room Type</option>
                             <option value="single">Single Room</option>
                             <option value="double">Double Room</option>
-                            <option value="suite">Executive Suite</option>
                         </select>
                     </div>
                     <button type="submit" class="btn">Book Now</button>
@@ -2036,32 +2042,6 @@
     </div>
    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
-    // Mobile detection and error handling
-    console.log('Script loading on:', navigator.userAgent);
-    console.log('EmailJS loaded:', typeof emailjs !== 'undefined');
-    
-    // Add error handling
-    window.addEventListener('error', function(e) {
-        console.error('Script error:', e.message, 'at', e.filename, ':', e.lineno);
-    });
-    
-    // Test if EmailJS loads
-    window.addEventListener('load', function() {
-        if (typeof emailjs === 'undefined') {
-            console.error('EmailJS failed to load');
-            // Show warning but don't break the page
-            const forms = document.querySelectorAll('form');
-            forms.forEach(form => {
-                const submitBtn = form.querySelector('button[type="submit"]');
-                if (submitBtn) {
-                    submitBtn.innerHTML = 'Form Disabled - Please refresh';
-                    submitBtn.disabled = true;
-                    submitBtn.style.opacity = '0.7';
-                }
-            });
-        }
-    });
-
     // Animated Typography for Hero Title
     const heroTitle = "Luxury Meets Kigali";
     const titleElement = document.getElementById('animatedTitle');
@@ -2073,7 +2053,6 @@
         span.style.animationDelay = `${index * 0.05}s`;
         titleElement.appendChild(span);
     });
-    
     // Mobile Navigation
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const mainNav = document.getElementById('mainNav');
@@ -2083,7 +2062,6 @@
             ? '<i class="fas fa-times"></i>'
             : '<i class="fas fa-bars"></i>';
     });
-    
     // Close mobile menu when clicking a link
     document.querySelectorAll('nav a').forEach(link => {
         link.addEventListener('click', () => {
@@ -2091,7 +2069,6 @@
             mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
         });
     });
-    
     // Header scroll effect
     window.addEventListener('scroll', () => {
         const header = document.querySelector('header');
@@ -2101,7 +2078,6 @@
             header.classList.remove('scrolled');
         }
     });
-    
     // Booking Modal
     const bookingBtns = document.querySelectorAll('#tourBookingBtn, .view-details-btn');
     const bookingModal = document.getElementById('bookingModal');
@@ -2117,7 +2093,6 @@
         bookingModal.classList.remove('active');
         document.body.style.overflow = 'auto';
     });
-    
     // Close modals when clicking outside
     window.addEventListener('click', (e) => {
         if (e.target === bookingModal) {
@@ -2125,9 +2100,8 @@
             document.body.style.overflow = 'auto';
         }
     });
-    
     // Form submission with EmailJS - ACCOMMODATION FORM
-    document.getElementById('contactForm')?.addEventListener('submit', async (e) => {
+    document.getElementById('contactForm').addEventListener('submit', async (e) => {
         e.preventDefault();
         const form = e.target;
         const submitBtn = form.querySelector('button[type="submit"]');
@@ -2137,7 +2111,6 @@
             // Show loading state
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
             submitBtn.disabled = true;
-            
             // Get form data
             const formData = {
                 from_name: form.querySelector('input[type="text"]').value,
@@ -2149,11 +2122,10 @@
                 message: form.querySelector('textarea').value,
                 to_email: "itundaresidence@gmail.com"
             };
-            
             // Send to residence
             await emailjs.send(
-                "service_8sxnzuh",
-                "template_rq6rf91",
+                "service_8sxnzuh", // Your service ID
+                "template_rq6rf91", // Replace with your ACCOMMODATION template ID
                 formData
             );
 
@@ -2161,16 +2133,15 @@
             form.reset();
         } catch (error) {
             console.error('Error sending email:', error);
-            showNotification('Sorry, there was an error sending your message. Please try again later or contact us directly.');
+            showNotification('Sorry, there was an error sending your message. Please try again.');
         } finally {
             // Reset button state
             submitBtn.innerHTML = originalBtnText;
             submitBtn.disabled = false;
         }
     });
-    
     // Form submission with EmailJS - TOUR BOOKING FORM
-    document.getElementById('tourBookingForm')?.addEventListener('submit', async (e) => {
+    document.getElementById('tourBookingForm').addEventListener('submit', async (e) => {
         e.preventDefault();
         const form = e.target;
         const submitBtn = form.querySelector('button[type="submit"]');
@@ -2180,7 +2151,6 @@
             // Show loading state
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
             submitBtn.disabled = true;
-            
             const formData = {
                 from_name: form.querySelector('input[type="text"]').value,
                 from_email: form.querySelector('input[type="email"]').value,
@@ -2191,11 +2161,10 @@
                 details: form.querySelector('textarea').value,
                 to_email: "itundaresidence@gmail.com"
             };
-            
             // Send to residence
             await emailjs.send(
                 "service_8sxnzuh",
-                "template_sdkr713",
+                "template_sdkr713", // Your tour booking template ID
                 formData
             );
 
@@ -2203,16 +2172,15 @@
             form.reset();
         } catch (error) {
             console.error('Error sending email:', error);
-            showNotification('Sorry, there was an error submitting your request. Please try again later or contact us directly.');
+            showNotification('Sorry, there was an error submitting your request. Please try again.');
         } finally {
             // Reset button state
             submitBtn.innerHTML = originalBtnText;
             submitBtn.disabled = false;
         }
     });
-    
-    // Form submission for VIEWING MODAL FORM - REMOVED problematic empty template
-    document.getElementById('bookingForm')?.addEventListener('submit', async (e) => {
+    // Form submission with EmailJS - VIEWING MODAL FORM
+    document.getElementById('bookingForm').addEventListener('submit', async (e) => {
         e.preventDefault();
         const form = e.target;
         const submitBtn = form.querySelector('button[type="submit"]');
@@ -2222,21 +2190,35 @@
             // Show loading state
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
             submitBtn.disabled = true;
-            
-            showNotification('This form is temporarily disabled. Please use the accommodation or tour booking forms.');
+            const formData = {
+                from_name: form.querySelector('input[type="text"]').value,
+                from_email: form.querySelector('input[type="email"]').value,
+                phone: form.querySelector('input[type="tel"]').value,
+                preferred_date: form.querySelector('input[type="date"]').value,
+                preferred_time: form.querySelectorAll('select')[0].value,
+                room_type: form.querySelectorAll('select')[1].value,
+                to_email: "itundaresidence@gmail.com"
+            };
+            // Send to residence
+            await emailjs.send(
+                "service_8sxnzuh",
+                "", // Your general inquiry template ID
+                formData
+            );
+        
+            showNotification('Your Accommodation booking request has been submitted, You will get A confirmation As soon As Possible');
             bookingModal.classList.remove('active');
             document.body.style.overflow = 'auto';
             form.reset();
         } catch (error) {
-            console.error('Error:', error);
-            showNotification('Sorry, there was an error. Please use the main booking forms.');
+            console.error('Error sending email:', error);
+            showNotification('Sorry, there was an error booking your viewing. Please try again.');
         } finally {
             // Reset button state
             submitBtn.innerHTML = originalBtnText;
             submitBtn.disabled = false;
         }
     });
-    
     // Notification function
     function showNotification(message) {
         const notification = document.createElement('div');
@@ -2261,7 +2243,6 @@
             setTimeout(() => notification.remove(), 300);
         }, 3000);
     }
-    
     // FAQ Accordion
     const faqQuestions = document.querySelectorAll('.faq-question');
     faqQuestions.forEach(question => {
@@ -2270,59 +2251,42 @@
             faqItem.classList.toggle('active');
         });
     });
-    
     // Initialize Maps
     function initMap(mapId) {
-        try {
-            // Updated to exact coordinates from Google Maps link
-            const itundaResidence = [-1.9415685, 30.1265401];
+        // Updated to exact coordinates from Google Maps link
+        const itundaResidence = [-1.9415685, 30.1265401];
   
-            // Create map
-            const map = L.map(mapId).setView(itundaResidence, 15);
+        // Create map
+        const map = L.map(mapId).setView(itundaResidence, 15);
   
-            // Add tile layer
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            }).addTo(map);
+        // Add tile layer
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
   
-            // Custom icon
-            const goldIcon = L.divIcon({
-                html: '<i class="fas fa-map-marker-alt" style="color: #d4af37; font-size: 30px;"></i>',
-                iconSize: [30, 30],
-                className: 'gold-marker'
-            });
+        // Custom icon
+        const goldIcon = L.divIcon({
+            html: '<i class="fas fa-map-marker-alt" style="color: #d4af37; font-size: 30px;"></i>',
+            iconSize: [30, 30],
+            className: 'gold-marker'
+        });
   
-            // Add marker
-            L.marker(itundaResidence, {icon: goldIcon}).addTo(map)
-                .bindPopup(`
-                    <div style="padding: 10px;">
-                        <h3 style="margin: 0 0 10px 0; color: #1a1a1a;">Itunda Residence</h3>
-                        <p style="margin: 0; color: #5a5a5a;">KG 46 St, Kigali, Rwanda</p>
-                        <a href="https://maps.google.com/?q=KG+46+St,+Kigali,+Rwanda" target="_blank" style="display: inline-block; margin-top: 10px; padding: 5px 10px; background: #d4af37; color: #1a1a1a; text-decoration: none; border-radius: 3px; font-weight: 600;">Get Directions</a>
-                    </div>
-                `)
-                .openPopup();
-        } catch (error) {
-            console.error('Map initialization error:', error);
-            // Don't break the page if maps fail
-            const mapElement = document.getElementById(mapId);
-            if (mapElement) {
-                mapElement.innerHTML = '<div style="padding: 20px; text-align: center; color: #666;">Map temporarily unavailable</div>';
-            }
-        }
+        // Add marker
+        L.marker(itundaResidence, {icon: goldIcon}).addTo(map)
+            .bindPopup(`
+                <div style="padding: 10px;">
+                    <h3 style="margin: 0 0 0 10px 0; color: #1a1a1a;">Itunda Residence</h3>
+                    <p style="margin: 0; color: #5a5a5a;">KG 46 St, Kigali, Rwanda</p>
+                    <a href="https://maps.google.com/?q=KG+46+St,+Kigali,+Rwanda" target="_blank" style="display: inline-block; margin-top: 10px; padding: 5px 10px; background: #d4af37; color: #1a1a1a; text-decoration: none; border-radius: 3px; font-weight: 600;">Get Directions</a>
+                </div>
+            `)
+            .openPopup();
     }
-    
     // Initialize maps when page loads
     document.addEventListener('DOMContentLoaded', () => {
-        // Only initialize maps if elements exist
-        if (document.getElementById('map')) {
-            initMap('map');
-        }
-        if (document.getElementById('contact-map')) {
-            initMap('contact-map');
-        }
+        initMap('map');
+        initMap('contact-map');
     });
-    
     // Scroll animations
     function checkScroll() {
         const fadeElements = document.querySelectorAll('.fade-in');
@@ -2338,7 +2302,6 @@
     }
     window.addEventListener('scroll', checkScroll);
     window.addEventListener('load', checkScroll);
-    
     // Parallax effect for hero
     window.addEventListener('scroll', () => {
         const scrolled = window.pageYOffset;
@@ -2347,7 +2310,6 @@
             hero.style.transform = `scale(${1.05 - scrolled * 0.00015})`;
         }
     });
-    
     // Add floating label functionality
     const formInputs = document.querySelectorAll('.form-group input, .form-group textarea, .form-group select');
     formInputs.forEach(input => {
